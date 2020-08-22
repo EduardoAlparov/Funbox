@@ -9,19 +9,6 @@ html(lang="en")
     title Portfolio | main page
   body
     .wrapper
-      .welcome-section
-        include components/parallax 
-        include components/hero 
-        include components/about
-        
-      include components/useful
-      include components/works
+      section.welcome-section
+        include components/hero.pug
 
-      section.section-feedsandform
-        include components/feeds          
-        include components/forms                  
-      include components/footer               
-              
-    include components/menu   
-
-    include ./templates/entry.pug

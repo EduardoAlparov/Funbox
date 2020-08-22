@@ -1,43 +1,67 @@
-section.hero
-  .container.hero__container  
-    .header
-
-      .header__logo
-        a.logo(href='#')
-          p.logo__abbr ЭА
-
-      .header__menu
-        nav.menu 
-          -
-            var items = [
-              ["Главная", "main"],
-              ["Обо мне", "about"],
-              ["Навыки", "useful"],
-              ["Работы", "works"],
-              ["Отзывы", "feeds"],
-              ["Связаться", "forms"]
-            ];
-          ul.menu__list
-            each row in items 
-              li.menu__item 
-                a(href='#' + row[1]).menu__link #{row[0]}
-
-      .header__socials
-        - var icons = ["insta", "vk", "github"]
-        ul.socials  
-          each item, index in icons
-            li.socials__item
-              a(href="").socials__link
-                +icon(item, "socials__icon")
-
-      button.hamburger-menu-link
-        .hamburger-menu-link__bars          
-
-    .hero-content
-      .content__salutation Личный сайт<br> веб-разработчика
-      .content__name Эдуард<br> Алпаров   
-
-    .hero__scroll-down              
-      a(href="#about").scroll-down-btn 
-        .scroll-text Скролл
-        +icon('scroll', "scroll-svg")       
+.menu-section 
+  .container.menu-container
+    .menu__title  
+      p Ты сегодня покормил кота?
+    .menu__list
+      .menu__item
+        .block
+          .block__main  
+            .block-title
+              .block-title__textup
+                p Сказочное заморской яство
+              .block-title__textup--selhover
+                p Котэ не одобряет?  
+              .block-title__name
+                p Нямушка
+              .block-title__with
+                p с фуа-гра
+              .block-title__textdown
+                p 10 порций <br> мышь в подарок    
+              .block__mark.c-1         
+                .block__value 0,5
+                .block__kg  кг
+        .block__desc     
+          .block__desc--default Чего сидишь? Порадуй котэ, <a class="block__desc-link"> купи.</a>
+          .block__desc--selected Печень утки разварная с артишоками.
+          .block__desc--disabled Печалька, с фуагра закончилось.
+      .menu__item
+        .block__main
+          .block-title
+            .block-title__textup
+              p Сказочное заморской яство
+            .block-title__textup--selhover
+              p Котэ не одобряет?
+            .block-title__name
+              p Нямушка
+            .block-title__with
+              p с рыбой
+            .block-title__textdown
+              p 40 порций <br> 2 мыши в подарок  
+            .block__mark.c-1         
+              .block__value 2
+              .block__kg  кг     
+        .block__desc
+          .block__desc--default Чего сидишь? Порадуй котэ, <a class="block__desc-link"> купи.</a>      
+          .block__desc--selected Головы щучьи с чесноком да свежайшая сёмгушка.
+          .block__desc--disabled Печалька, с рыбой закончилось.
+      .menu__item
+        .block__main
+          .block-title
+            .block-title__textup
+              p Сказочное заморской яство
+            .block-title__textup--selhover
+              p Котэ не одобряет?  
+            .block-title__name
+              p Нямушка
+            .block-title__with
+              p с курой
+            .block-title__textdown
+              p 100 порций <br> 5 мышей в подарок 
+            .block__mark.c-1         
+              .block__value 5
+              .block__kg  кг     
+        .block__desc
+          .block__desc--default Чего сидишь? Порадуй котэ, <a class="block__desc-link"> купи.</a>      
+          .block__desc--selected Филе из цыплят с трюфелями в бульоне.
+          .block__desc--disabled Печалька, с курой закончилось.
+      

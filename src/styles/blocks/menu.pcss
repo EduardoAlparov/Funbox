@@ -1,49 +1,239 @@
-.menu__list {
-  display: flex;
+.menu-section {
+  height: 100%;
+  min-height: 100vh;
+}
 
-  @include tablets {
+.menu-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu__title {
+  line-height: 3;
+  flex: 1;
+  text-align: center;
+  font-family: "Exo2";
+  font-size: 36px;
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.004);
+  
+}
+
+.menu__list {
+  flex: 5;
+  display: flex;
+  justify-content: space-around;
+  @include desktop {
     flex-wrap: wrap;
   }
 }
 
 .menu__item {
-  margin-right: 32px;
- 
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: url(~images/content/catborder.png);
+  background-size: cover;
+  width: 320px;
+  height: 480px;
+  cursor: pointer;
 
-  &:last-child{
-    margin-right: 0;
+  &:hover {
+    .c-1 {
+      background: #2ea8e6;
+    }
   }
 
-  @include tablets { 
-    margin-right: 42px;
-    margin-bottom: 25px;
+  &.active {
+    background: url(~images/content/catborderred.png);
 
-    &:last-child{
-    margin-right: 0;
+    .block__desc {
+      &--default {
+        display: none;
+      }
+      &--selected {
+        display: block;
+      }
+    }
+    .c-1 {
+      background: #d91667;
+    }
+    &:hover {
+      .block-title__textup {
+        visibility: hidden;
+
+        &--selhover {
+          visibility: visible;
+        }
+      }
+      .c-1 {
+        background: #e62e7a;
+      }
+    }
   }
+
+  &.disabled {
+    cursor: default;
+    filter: sepia(1);
+
+    .block__desc {
+      &--default {
+        display: none;
+      } 
+      &--disabled {
+        display: block;
+      }
+    }
+    &:hover {
+      .c-1 {
+        background: #1698d9;
+      }
+    }
+  }
+
+  @include desktop {
+    margin-bottom: 50px;
   }
 }
 
-.menu__link {
-  text-decoration: none;
-  font-size: 16px;
-  color: rgb(255, 255, 255);
-  line-height: 1.875;
-  padding: 14px;
 
-  &:active {
-    color: #ff9a00;
-    border-bottom: 1px solid #ff9a00;
+.c-1 {
+  background: #1698d9;
+}
+
+.c-2 {
+  background: #d91667;
+}
+
+.c-3 {
+  background: #d91667;
+}
+
+.block{
+  width: 100%;
+  height: 100%;
+  
+}
+
+.block__main {
+  top: 25px;
+  right: 70px;
+  position: absolute;
+  z-index: 10;
+  width: auto;
+  min-width: 53%;
+
+}
+
+.block-title {
+  margin: auto;
+  font-size: 16px;
+  font-family: "Trebuchet MS";
+  color: rgb(102, 102, 102);
+  position: relative;
+  max-width: 100%;
+}
+
+.block-title__textup {
+  line-height: 1;
+  font-size: 16px;
+  font-family: "Trebuchet MS";
+  margin-bottom: 16px;
+
+  &--selhover {
+    top: 0;
+    position: absolute;
+    visibility: hidden;
+    line-height: 1;
+    font-size: 16px;
+    font-family: "Trebuchet MS";
+    margin-bottom: 16px;
+    color: rgb(230, 46, 122);
   }
+}
+
+.block-title__textdown {
+  line-height: 1;
+  font-size: 16px;
+  font-family: "Trebuchet MS";
+}
+
+.block-title__name {
+  line-height: 1;
+  font-size: 48px;
+  font-family: "Trebuchet MS";
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+.block-title__with {
+  line-height: 1;
+  font-size: 24px;
+  font-family: "Trebuchet MS";
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+
+.block__mark {
+  width: 81px;
+  height: 81px;
+  border-radius: 50%;
+  background: #1698d9;
+  position: absolute;
+  left: 175px;
+  top: 355px;
+}
+
+.block__value {
+  text-align: center;
+  font-size: 40px;
+  font-family: "Trebuchet MS";
+  color: rgb(255, 255, 255);
+  line-height: 1.4;
+}
+
+.block__kg {
+  line-height: 0.1;
+  font-size: 30px;
+  font-family: "Trebuchet MS";
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.block__desc {
+  text-align: center;
+  font-size: 13px;
+  font-family: "Trebuchet MS";
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.004);
+  position: absolute;
+  bottom: -30px;
+  transform: translateX(25%);
+  &--default {
+    cursor: default;
+  }
+  
+  &--selected {
+    display: none;
+  }
+  
+  &--disabled {
+    display: none;
+  }
+}
+
+.block__desc-link {
+  color: #1698d9;
+  text-decoration: none;
+  border-bottom: 1px dashed #1698d9; 
 
   &:hover {
-    color: #ff9a00;
-  }
-
-  @include tablets {
-    padding-left: 0;
-    font-size: 14px;
-    
+    color: #2ea8e6;
+    border-bottom: 1px dashed #2ea8e6;
   }
 }
 
