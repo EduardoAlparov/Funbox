@@ -27,9 +27,8 @@ if (windowWidth > '480') {
       event.currentTarget.parentElement.classList.add('active');
     }); 
   };
-} else { document.addEventListener('touchstart', (e) => {
+} else { document.addEventListener('click', (e) => {
     event.preventDefault();
     e.currentTarget.classList.toggle("active");
-    console.log(e.touches);
   });
 }  

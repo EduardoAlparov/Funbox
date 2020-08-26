@@ -7,11 +7,11 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .menu__title {
   line-height: 3;
-  flex: 1;
   text-align: center;
   font-family: "Exo2";
   font-size: 36px;
@@ -25,9 +25,10 @@
 }
 
 .menu__list {
-  flex: 6;
   display: flex;
   justify-content: space-around;
+  margin-bottom: 25px;
+
   @include desktop {
     flex-wrap: wrap;
   }
@@ -149,7 +150,8 @@
 }
 
 .block__main {
-  top: 25px;
+  pointer-events: none;
+  top: 15px;
   right: 70px;
   position: absolute;
   z-index: 10;
@@ -171,7 +173,7 @@
   line-height: 1;
   font-size: 16px;
   font-family: "Trebuchet MS";
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   color: ​#666666;
 
   &--selhover {
@@ -199,7 +201,7 @@
   font-family: "Trebuchet MS";
   color: rgb(0, 0, 0);
   font-weight: bold;
-  margin-bottom: 14px;
+  margin-bottom: 5px;
 
 }
 
@@ -214,13 +216,14 @@
 
 
 .block__mark {
+  pointer-events: none;
   width: 81px;
   height: 81px;
   border-radius: 50%;
   background: #1698d9;
   position: absolute;
-  left: 175px;
-  top: 355px;
+  left: 180px;
+  top: 365px;
 }
 
 .block__value {
@@ -246,7 +249,7 @@
   color: rgb(255, 255, 255);
   text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.004);
   position: absolute;
-  bottom: -30px;
+  bottom: -25px;
   left: 50%;
   transform: translateX(-50%);
   width: fit-content;
