@@ -30,6 +30,7 @@ if (windowWidth > '480') {
 } else { for (var i = 0; i < menuItem.length; i++) {
     menuItem[i].addEventListener('click', function(event) {
       event.preventDefault();
+      event.stopPropagation();
       event.currentTarget.classList.toggle("active");
     });
   };  
